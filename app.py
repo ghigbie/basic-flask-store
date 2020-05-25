@@ -21,7 +21,13 @@ stores = [
 
 @app.route('/store', methods=['POST'])
 def create_store():
-    pass
+    request_data = request.get_json()
+    new store = {
+        'name': request_data['name']
+        'items': []
+    }
+    stores.append(new_store) #appends to list above
+    return jsonify(new_store)
 
 
 @app.route('/store/<string:name>')
